@@ -103,8 +103,9 @@ server.on('update', function(addr, params) {
 server.on('complete', function(addr, params) {
     if (!argv.quiet) {
         var infoHash = params.info_hash
-        var peers = server.torrents[infoHash].peers
-        console.log("complete,infoHash:" + infoHash + ",toPeer:" + addr + ",peers:" + peers.length)
+        var torrents = server.torrents
+        var peers = torrents[infoHash].peers
+        console.log("complete,infoHash:" + infoHash + ",toPeer:" + addr + ",peers:" + peers.length + ",torrents:" + torrents.length)
     }
 })
 server.on('start', function(addr, params) {
