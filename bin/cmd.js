@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 var minimist = require('minimist')
-var Server = require('../').Server
+// var Server = require('../').Server
+var Server = require('../server')
 
 var argv = minimist(process.argv.slice(2), {
     alias: {
