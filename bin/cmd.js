@@ -106,7 +106,8 @@ server.on('complete', function(addr, params) {
         var infoHash = params.info_hash
         var torrents = server.torrents
         var peers = torrents[infoHash].peers
-        console.log("complete,infoHash:" + infoHash + ",toPeer:" + addr + ",peers:" + peers.length + ",torrents:" + torrents.length)
+        var torrentKeys = Object.keys(torrents)
+        console.log("complete,infoHash:" + infoHash + ",toPeer:" + addr + ",peers:" + peers.length + ",torrentCount:" + torrentKeys.length + ",torrents:" + torrentKeys)
     }
 })
 server.on('start', function(addr, params) {
